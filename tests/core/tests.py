@@ -87,7 +87,7 @@ class FieldTests (TestCase):
         try:
             obj.full_clean()
             self.fail('Invalid employee object passed validation')
-        except ValidationError, e:
+        except ValidationError as e:
             for f in ('salary', 'ssn', 'email'):
                 self.assertIn(f, e.error_dict)
 
